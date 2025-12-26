@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="home-container">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Secure Transactions with <span class="highlight">Explainable AI</span></h1>
+            <p>Advanced machine learning models to detect credit card fraud in real-time, providing transparency into
+                every prediction.</p>
+            <a href="{{ url_for('detector') }}" class="cta-button">Launch Detector <i
+                    class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-visual">
+            <i class="fas fa-search-dollar floating-icon"></i>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>Transaction Scenarios</h2>
+        <p class="section-subtitle">Real-world examples of how our AI distinguishes between fraud and normal activity.
+        </p>
+
+        <div class="cards-grid">
+            <!-- Fraud Case 1 -->
+            <div class="info-card card-fraud">
+                <div class="card-icon"><i class="fas fa-user-secret"></i></div>
+                <h3>The "Testing" Charge</h3>
+                <p><strong>Scenario:</strong> A thief verifies a stolen card with a tiny $1.00 transaction before
+                    draining the account.</p>
+                <p><strong>AI Signals:</strong> Extremely small amount coupled with a mismatch in "Digital Fingerprint"
+                    (V4, V12) indicating a new, unverified device.</p>
+            </div>
+
+            <!-- Fraud Case 2 -->
+            <div class="info-card card-fraud">
+                <div class="card-icon"><i class="fas fa-plane-slash"></i></div>
+                <h3>The "Impossible Traveler"</h3>
+                <p><strong>Scenario:</strong> Card used in New York at 9:00 AM and then in London at 9:15 AM.</p>
+                <p><strong>AI Signals:</strong> The time difference vs. location change is physically impossible. This
+                    causes a massive spike in V17 and V10 deviation.</p>
+            </div>
+
+            <!-- Normal Case 1 -->
+            <div class="info-card card-normal">
+                <div class="card-icon"><i class="fas fa-coffee"></i></div>
+                <h3>The "Morning Coffee"</h3>
+                <p><strong>Scenario:</strong> You buy coffee for $5.50 at the same shop every weekday morning.</p>
+                <p><strong>AI Signals:</strong> Consistent location, time, and amount. The "Digital Fingerprint"
+                    (V-features) matches your established history perfectly.</p>
+            </div>
+
+            <!-- Normal Case 2 -->
+            <div class="info-card card-normal">
+                <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                <h3>Subscription Renewal</h3>
+                <p><strong>Scenario:</strong> A monthly Netflix charge of $15.99 on the 10th of every month.</p>
+                <p><strong>AI Signals:</strong> Highly predictable pattern. Even if the amount is slightly higher, the
+                    recurring nature flags this as safe.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-section">
+        <h2>What are V4, V10, V17...?</h2>
+        <div class="tech-content">
+            <div class="tech-box">
+                <i class="fas fa-fingerprint huge-icon"></i>
+                <div class="tech-text">
+                    <h3>They are "Digital Fingerprints"</h3>
+                    <p>To protect your privacy, banks do not share your Name, Address, or exact Location in the dataset.
+                        Instead, they run a mathematical process called <strong>PCA (Principal Component
+                            Analysis)</strong>.</p>
+                    <p>This compresses all your private data (User ID, IP Address, GPS, Device Type) into abstract
+                        numbers like <strong>V1, V2... V28</strong>.</p>
+
+                    <div class="alert-box">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Important for Users:</strong>
+                        <p>You cannot measure or calculate these numbers yourself! They are encrypted mathematical
+                            representations.</p>
+                        <p>When using the Detector, please use the <strong>"Load Scenario"</strong> buttons to simulate
+                            how these values look for different real-world events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    .section-subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+    }
+
+    .huge-icon {
+        font-size: 4rem;
+        color: #764ba2;
+        margin-right: 30px;
+    }
+
+    .tech-box {
+        display: flex;
+        align-items: flex-start;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .alert-box {
+        margin-top: 20px;
+        background: #e8f4fd;
+        border-left: 5px solid #4a90e2;
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    .alert-box strong {
+        color: #2c3e50;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .alert-box p {
+        margin: 5px 0 0;
+        font-size: 0.95rem;
+    }
+</style>
+{% endblock %}

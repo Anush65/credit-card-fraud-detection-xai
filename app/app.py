@@ -26,8 +26,12 @@ load_model()
 FEATURE_NAMES = ['Time', 'Amount', 'V4', 'V10', 'V12', 'V14', 'V17', 'V18']
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    return render_template('home.html')
+
+@app.route('/detector')
+def detector():
+    return render_template('detector.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
