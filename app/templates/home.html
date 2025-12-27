@@ -40,6 +40,17 @@
                     causes a massive spike in V17 and V10 deviation.</p>
             </div>
 
+            <!-- Fraud Case 3 (New) -->
+            <div class="info-card card-fraud">
+                <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                <h3>The "Burst Attack"</h3>
+                <p><strong>Scenario:</strong> Multiple high-value electronics purchases made within 5 minutes online.
+                </p>
+                <p><strong>AI Signals:</strong> Rapid succession of high amounts (Amount, Time) combined with unusual
+                    V14
+                    patterns triggers an immediate alert.</p>
+            </div>
+
             <!-- Normal Case 1 -->
             <div class="info-card card-normal">
                 <div class="card-icon"><i class="fas fa-coffee"></i></div>
@@ -56,6 +67,16 @@
                 <p><strong>Scenario:</strong> A monthly Netflix charge of $15.99 on the 10th of every month.</p>
                 <p><strong>AI Signals:</strong> Highly predictable pattern. Even if the amount is slightly higher, the
                     recurring nature flags this as safe.</p>
+            </div>
+
+            <!-- Normal Case 3 (New) -->
+            <div class="info-card card-normal">
+                <div class="card-icon"><i class="fas fa-suitcase-rolling"></i></div>
+                <h3>Holiday Travel</h3>
+                <p><strong>Scenario:</strong> You buy dinner in Paris while on vacation, far from home.</p>
+                <p><strong>AI Signals:</strong> Although location is new, the spending behavior (V-features) matches
+                    your
+                    typical restaurant visits, avoiding a false alarm.</p>
             </div>
         </div>
     </section>
@@ -90,36 +111,47 @@
 <style>
     .section-subtitle {
         text-align: center;
-        color: #666;
+        color: #cccccc;
         margin-bottom: 30px;
         font-size: 1.1rem;
     }
 
     .huge-icon {
         font-size: 4rem;
-        color: #764ba2;
+        color: #a6c1ee;
         margin-right: 30px;
     }
 
     .tech-box {
         display: flex;
         align-items: flex-start;
-        background: white;
+        background: rgba(255, 255, 255, 0.05);
         padding: 40px;
         border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .tech-text h3 {
+        margin-top: 0;
+        color: #ffffff;
+    }
+
+    .tech-text p {
+        color: #dddddd;
     }
 
     .alert-box {
         margin-top: 20px;
-        background: #e8f4fd;
-        border-left: 5px solid #4a90e2;
+        background: rgba(33, 150, 243, 0.15);
+        border-left: 4px solid #2196f3;
         padding: 15px;
         border-radius: 5px;
+        color: #ffffff;
     }
 
     .alert-box strong {
-        color: #2c3e50;
+        color: #64b5f6;
         display: block;
         margin-bottom: 5px;
     }
@@ -127,6 +159,7 @@
     .alert-box p {
         margin: 5px 0 0;
         font-size: 0.95rem;
+        color: #e0e0e0;
     }
 </style>
 {% endblock %}

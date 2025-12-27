@@ -54,7 +54,8 @@ def train():
 
         # Train Random Forest
         print("Training Random Forest Model...")
-        rf = RandomForestClassifier(n_estimators=20, max_depth=10, random_state=42, n_jobs=1)
+        # regularized to prevent overconfidence
+        rf = RandomForestClassifier(n_estimators=100, max_depth=8, min_samples_leaf=10, random_state=42, n_jobs=1)
         rf.fit(X_train_resampled, y_train_resampled)
 
         # Evaluate
