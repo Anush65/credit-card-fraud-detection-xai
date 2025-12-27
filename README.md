@@ -1,6 +1,6 @@
 # Credit Card Fraud Detection System
 
-## 📌 Project Objective
+## Project Objective
 This project aims to build a complete end-to-end **Credit Card Fraud Detection System** using **Machine Learning** and **Explainable AI (XAI)**. It features a modern web dashboard for real-time fraud prediction, designed to be user-friendly and suitable for educational demonstrations.
 
 The system:
@@ -9,7 +9,7 @@ The system:
 - Explains predictions using **Feature Importance** (XAI).
 - Provides a clean, modern **Flask Web Interface**.
 
-## 🧠 Core Features
+## Core Features
 - **Machine Learning**: 
     - Data Cleaning & Preprocessing.
     - Imbalance Handling with SMOTE.
@@ -23,13 +23,13 @@ The system:
     - Real-time Fraud/Legitimate classification.
     - Confidence score display.
 
-## 🛠 Tech Stack
+## Tech Stack
 - **Backend API**: Python, Flask
 - **Machine Learning**: Pandas, NumPy, Scikit-learn, Imbalanced-learn, Joblib
 - **Visualization**: Matplotlib, Seaborn
 - **Frontend**: HTML5, CSS3 (Modern UI), JavaScript (Minimal)
 
-## 📁 Project Structure
+## Project Structure
 ```
 credit-card-fraud-detection/
 │
@@ -59,7 +59,7 @@ credit-card-fraud-detection/
 └── README.md               # Project Documentation
 ```
 
-## 🚀 How to Run
+## How to Run
 1. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
@@ -79,13 +79,13 @@ credit-card-fraud-detection/
 4. **Access the Dashboard**:
    Open your browser and navigate to `http://127.0.0.1:5000/`.
 
-## 📊 Features Used for Prediction
+## Features Used for Prediction
 To keep the inputs user-friendly, the system uses the top 8 most important features:
 - **Time**: Time elapsed since the first transaction.
 - **Amount**: Transaction amount.
 - **V4, V10, V12, V14, V17, V18**: Principal components from the original dataset (PCA features).
 
-## 🔮 Future Scope
+## Future Scope
 - **Deep Learning**: Implement LSTM or Autoencoders for anomaly detection.
 - **Real-time API**: Deploy on cloud (AWS/Heroku) for live transaction monitoring.
 - **Advanced XAI**: Integrate SHAP (SHapley Additive exPlanations) for deeper local interpretability.
